@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="App.js" defer></script>
+    <title>Miguel Jotnar | Portfólio</title>
+</head>
+
+<body>
+
+    <div class="particulas">
+
+    </div>
+    <!-- Início barra de navegação -->
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fim barra de navegação -->
+
+    <!-- Início cabeçalho -->
+    <main id="inicio" class="cabecalho">
+        <img src="./imagens/perfil.png" alt="Minha foto de perfil" class="foto_perfil">
+        <h1 class ="foto-perfil-titulo"></h1>
+        <p class="cabecalho-sub-titulo"></p>
+    </main>
+    <!-- Início cabeçalho -->
+
+    <!-- Início da seção "Sobre" -->
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo"></h2>
+        <Div class="sobre-caixa">
+            <p class="sobre-paragrafo"></p>
+        </Div>
+    </section>
+    <!-- Fim da seção "Sobre"-->
+
+    <!-- Ínicio da seção "Projetos" -->
+    <section id="projetos" class="projetos">
+        <h3 class="projetos-titulo"></h3>
+
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./imagens/IMG1.png" alt="Imagem_ATENÇÃO" class="projeto-imagem">
+                <div class="texto-titulo-caixa">
+                    <h4 class="projetos-titulo-caixa"></h4>
+                    <p class="paragrafo-projetos"></p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./imagens/IMG1.png" alt="Imagem_ATENÇÃO" class="projeto-imagem">
+                <div class="texto-titulo-caixa">
+                    <h4 class="projetos-titulo-caixa"></h4>
+                    <p class="paragrafo-projetos"></p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./imagens/IMG1.png" alt="Imagem_ATENÇÃO" class="projeto-imagem">
+                <div class="texto-titulo-caixa">
+                    <h4 class="projetos-titulo-caixa"></h4>
+                    <p class="paragrafo-projetos"></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Fim da seção "Projetos" -->
+
+    <!-- Início da seção "Contato" -->
+    <section id="contato" class="contato">
+        <h5 class="contato-titulo"></h5>
+        <form id="formulario" class="formulario-contato" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+
+        </form>
+    </section>
+    <!-- Fim da seção "Contato" -->
+
+    <!-- Inicio JS-->
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5568992027210';
+
+            const texto = `Olá, me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+            const url = `https://whatsa.me/${telefone}/?t=${msgFormatada}`;
+
+            console.log(url);
+
+            window.open(url, '_blank');
+        }
+    </script>
+    <!-- Fim JS-->
+</body>
+
+</html>
